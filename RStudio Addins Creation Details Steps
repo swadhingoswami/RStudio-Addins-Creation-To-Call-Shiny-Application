@@ -1,0 +1,56 @@
+RStudio Addins Creation Details : 
+
+STEP 1: Create a R package in RStudio. [ Create a new R package "MyPackage" ]
+        Follow the steps to create a package.Mention End of the document { create a package in RStudio }.
+        Build & Reload.
+		
+		Need to install below package to run a Gadget shiny application. 
+		install.package("shiny")
+		install.package("shinyBS")
+		install.package("shinyjs")
+		install.package("miniUI")
+		install.package("datasets")
+		
+		
+STEP 2: Go to R folder inside the newly created package.Create a R script inside R Folder and define a R function.
+        [ Copy the "ASConnector.R" script inside the R folder ]
+        We can also create funtion from RStudio, which will store in R folder inside that new package.
+		
+STEP 3: Go to "~\R\win-library\3.4\MyPackage" 
+        Create a folder "rstudio" 
+		    create a file inside the folder and save as "addins.dcf".
+        Mention the below content inside the file.
+		
+        Name: ASConnector
+		    Description: ASConnector addin.
+		    Binding: ASConnector
+		    Interactive: false
+		
+		[ 
+		 Please find below parameters details: 
+		 { Name }        : Name of the Addins
+		 { Description } : Description for the Addins
+		 { Binding }     : Mention the funtion name that you want to call from the Addins 
+		]
+		
+#create a package in RStudio:
+
+	STEP 1: Go to RStudio -> File -> New Project 
+	STEP 2: Click on "New Directory" -> "Empty Project" -> Enter the Directory Name "MyPackage" -> Click on "Create Project"
+	STEP 3: install below required package to bulit your project.
+			a) install.package("devtools")
+			b) install.package("roxygen2")
+			c) library(devtools)
+			d) install_github("devtools","hodley")
+			e) Go To Build -> Configure Build Tools -> select "Package" from "Project build tools" drop down menu -> 
+			   click on checkbox "Generate documentation with Roxygen" -> It will open a popup window -> 
+			   checked all the checkbox option on it and click ok -> click ok  
+			f) Right side of the rstudio, it'll show your project details.
+			g) Click on "New Folder" type R to create a new folder under project.
+			h) Write a R script ( R Function ) and save in R folder.
+			   ex: square <- function(x){
+			         retunr (x^2)
+					 }
+			i) In R termminal type load_all() to create DESCRIPTION file. [ Also we can create it manually  if load_all() not working ]
+			j) Right side click on build -> Build & Reload
+			
